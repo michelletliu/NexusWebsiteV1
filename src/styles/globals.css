@@ -2,11 +2,12 @@
 
 @font-face {
   font-family: 'Host Grotesk';
-  src: url('https://fonts.cdnfonts.com/s/85268/HostGrotesk-Regular.woff') format('woff');
-  font-weight: 400;
+  src: url('/HostGrotesk-Light.ttf') format('truetype');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
+
 
 @font-face {
   font-family: 'Monomakh';
@@ -153,27 +154,27 @@
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
     h1 {
-      font-size: var(--text-2xl);
+      font-size: 8rem;
       font-weight: var(--font-weight-medium);
-      line-height: 1.5;
+      line-height: 1.1;
     }
 
     h2 {
       font-size: var(--text-xl);
       font-weight: var(--font-weight-medium);
-      line-height: 1.5;
+      line-height: 1.1;
     }
 
     h3 {
       font-size: var(--text-lg);
       font-weight: var(--font-weight-medium);
-      line-height: 1.5;
+      line-height: 1.1;
     }
 
     h4 {
       font-size: var(--text-base);
       font-weight: var(--font-weight-medium);
-      line-height: 1.5;
+      line-height: 1.1;
     }
 
     p {
@@ -287,7 +288,71 @@ html {
     mask-size: 194.51px 109.521px;
   }
   
-  .object-50%-50% {
-    object-position: 50% 50%;
+  .object-center-pos { object-position: 50% 50%; } 
+}
+
+/* Debug: force images to be visible */
+img, picture, .no-mask {
+  -webkit-mask: none !important;
+  mask: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* put this in the same CSS file */
+#partners-row img {
+  width: auto !important;      /* don't stretch to 100% */
+  max-width: none !important;  /* ignore preflight max-width */
+  height: 8rem !important;  /* h-9; adjust as you like */
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* Add these styles to your globals.css file */
+
+/* 1. Prevent horizontal overflow on the main container */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* 2. Ensure the root app container doesn't overflow */
+#root, #__next {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* 3. Fix for any elements that might still cause overflow */
+* {
+  max-width: 100vw;
+}
+
+/* 4. Responsive navigation fix */
+@media (max-width: 768px) {
+  /* Hide or reposition navigation on mobile */
+  .nav-container {
+    right: 20px !important;
+    gap: 20px !important;
   }
+}
+
+/* 5. Hide decorative elements that cause overflow on mobile */
+@media (max-width: 1440px) {
+  /* Hide elements positioned outside viewport */
+  [class*="left-\[-"][class*="px\]"],
+  [class*="right-\[-"][class*="px\]"] {
+    display: none;
+  }
+}
+
+/* 6. Make fixed-width containers responsive */
+.w-\[1440px\] {
+  max-width: 1440px !important;
+  width: 100% !important;
+}
+
+/* 7. Contain absolute positioned decorative elements */
+.overflow-clip {
+  overflow: hidden !important;
 }
