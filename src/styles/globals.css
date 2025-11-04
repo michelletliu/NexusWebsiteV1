@@ -1,4 +1,10 @@
+@import "tailwindcss";
+
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: 'Host Grotesk';
@@ -300,15 +306,6 @@ img, picture, .no-mask {
   filter: none !important;
 }
 
-/* put this in the same CSS file */
-#partners-row img {
-  width: auto !important;      /* don't stretch to 100% */
-  max-width: none !important;  /* ignore preflight max-width */
-  height: 8rem !important;  /* h-9; adjust as you like */
-  object-fit: contain;
-  flex: 0 0 auto;
-}
-
 /* Add these styles to your globals.css file */
 
 /* 1. Prevent horizontal overflow on the main container */
@@ -355,4 +352,65 @@ html, body {
 /* 7. Contain absolute positioned decorative elements */
 .overflow-clip {
   overflow: hidden !important;
+}
+
+/* Make the Schools row immune to old overrides */
+.schools {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, max-content));
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+.school-logo {
+  display: block;
+  height: clamp(32px, 3vw, 64px);
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.partners-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  justify-content: start !important;
+  justify-items: start !important;
+  margin-left: 0 !important;
+  gap: clamp(1.75rem, 10vw, 10rem);
+  max-width: min(100%);
+}
+
+.partner-logo {
+  display: block;
+  height: clamp(52px, 6vw, 200px);
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .schools {
+    grid-template-columns: repeat(3, minmax(0, max-content));
+  }
+
+  .partners-row {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+  }
+}
+
+@media (max-width: 640px) {
+  .schools {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+  }
+
+
+}
+
+@media (max-width: 420px) {
+  .schools {
+    grid-template-columns: minmax(0, max-content);
+    row-gap: 2rem;
+  }
 }
