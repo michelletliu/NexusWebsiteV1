@@ -136,7 +136,7 @@ function Frame({ onAboutClick, onEventsClick, onContactClick, onJoinClick }: { o
 function Header() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2">
-      <h1 className="font-normal text-[120px] text-white tracking-[0em]" style={{ fontFamily: 'Financier, serif', lineHeight: 1 }}>Nexus</h1>
+      <h1 className="font-normal text-[5rem] text-white tracking-[0em]" style={{ fontFamily: 'Financier, serif', lineHeight: 1 }}>Nexus</h1>
       <p className="font-normal leading-[normal] min-w-full relative shrink-0 text-[#015358] text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Southern California's First Intercollegiate Entrepreneurship Society</p>
     </div>
   );
