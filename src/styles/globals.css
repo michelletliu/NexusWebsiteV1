@@ -428,3 +428,19 @@ html, body {
     row-gap: 2rem;
   }
 }
+
+/* Replace the existing fade animation CSS with this */
+.fade-up {
+  opacity: 0;
+  transform: translate3d(0, var(--fade-distance, 32px), 0);
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-duration: var(--fade-duration, 640ms);
+  transition-timing-function: var(--fade-easing, cubic-bezier(0.33, 1, 0.68, 1));
+  transition-delay: var(--fade-delay, 0s);
+}
+
+.fade-up.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}

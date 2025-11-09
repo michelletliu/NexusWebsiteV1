@@ -54,7 +54,7 @@ function LogoCard({ src, alt }: { src: string; alt: string }) {
 
 function PartnersRow() {
   return (
-    <div className="w-full">
+    <div className="w-full fade up" style={{ "--fade-delay": "delay", "--fade-duration": "400ms" } as React.CSSProperties}>
       <div className="partners-row mx-auto">
         <img
           src={imgRectangle12}
@@ -138,7 +138,7 @@ function Header() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2">
       <h1 className="font-normal text-[5rem] text-white tracking-[0.05em]" style={{ fontFamily: 'Headline, serif', lineHeight: 1 }}>Nexus</h1>
-      <p className="font-normal leading-[normal] min-w-full relative shrink-0 text-[#015358] text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Southern California's First Intercollegiate Entrepreneurship Society</p>
+      <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"}}>Southern California's First Intercollegiate Entrepreneurship Society</p>
     </div>
   );
 }
@@ -610,7 +610,36 @@ function Footer() {
   );
 }
 
+// Add this reusable hook
+function useScrollAnimations() {
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          // Optional: Stop observing after animation triggers
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-up elements
+    const fadeElements = document.querySelectorAll('.fade-up');
+    fadeElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      fadeElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+}
+
 export default function App() {
+  useScrollAnimations();
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
