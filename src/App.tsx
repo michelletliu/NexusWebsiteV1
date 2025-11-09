@@ -5,7 +5,7 @@ import imgHero from "./assets/Nexus Hero Splash.png";
 import imgPrimaryMonogram from "./assets/Teal USC.png";
 import imgScriptLogo from "./assets/Teal UCLA.png";
 import imgCaltechLogo2014 from "./assets/Teal Caltech.png";
-import imgUciAnteatersLogo from "./assets/UCI.png";
+import imgUciAnteatersLogo from "./assets/uci.png";
 import imgLmu from "./assets/Teal LMU.png";
 import imgLogoUcsd2 from "./assets/Teal UCSD.png";
 import NexusLogo from "./assets/Nexus Logo.png";
