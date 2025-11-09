@@ -136,8 +136,8 @@ function Frame({ onAboutClick, onEventsClick, onContactClick, onJoinClick }: { o
 function Header() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2">
-      <h1 className="text-[120px] text-white" style={{ fontFamily: 'Monomakh, serif', lineHeight: 1 }}>Nexus</h1>
-      <p className="font-normal leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl w-[80vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] xl:w-[30vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Southern California's First Intercollegiate Entrepreneurship Society</p>
+      <h1 className="font-normal text-[120px] text-white tracking-[0em]" style={{ fontFamily: 'Financier, serif', lineHeight: 1 }}>Nexus</h1>
+      <p className="font-normal leading-[normal] min-w-full relative shrink-0 text-[#015358] text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Southern California's First Intercollegiate Entrepreneurship Society</p>
     </div>
   );
 }
@@ -288,7 +288,7 @@ function About() {
       className="flex flex-col font-normal gap-10 items-start text-[#f6f6f3] text-3xl"
       style={{ fontFamily: 'Host Grotesk, sans-serif' }}
     >
-      <div className="leading-normal w-[50vw]">
+      <div className="leading-normal sm:w-[50vw] w-[80vw]">
         <p>Nexus is the community for SoCal's most talented and driven student entrepreneurs.</p>
       </div>
       <div className="leading-normal w-full">
@@ -468,7 +468,7 @@ function Button3() {
       href="https://excessive-pound-7e1.notion.site/Join-our-Team-116f0e56bcf380cf9158f8d435ca9f3a" 
       target="_blank" 
       rel="noopener noreferrer"
-      className="bg-[#f6f6f3] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[8px] shrink-0 cursor-pointer transition-all hover:opacity-70 hover:scale-101 no-underline inline-block" 
+      className="bg-[#f6f6f3] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:opacity-70 hover:scale-101 no-underline inline-block" 
       data-name="Button"
     >
       <div aria-hidden="true" className="absolute border border-[#01939f] border-solid inset-0 pointer-events-none rounded-[999px]" />
@@ -563,7 +563,7 @@ function Socials() {
 
 function Links() {
   return (
-    <div className="flex flex-col gap-[40px] items-start w-full">
+    <div className="flex flex-col gap-[32px] items-center w-full">
       <div className="flex items-center justify-center relative shrink-0">
         <div className="flex-none">
           <div className="h-[53px] relative w-[38px]" data-name="IMG_4908 1">
@@ -574,12 +574,12 @@ function Links() {
         </div>
       </div>
       <div className="flex items-center justify-center min-w-full relative shrink-0">
-        <div className="flex-none w-full">
+        <div className="flex-none">
           <p className="leading-[normal] not-italic relative text-[#f6f6f3] text-[14px] tracking-[2px] w-full" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>CONTACT US</p>
         </div>
       </div>
       <div className="flex items-center justify-center relative shrink-0 w-full">
-        <div className="flex-none w-full">
+        <div className="flex-none">
           <Socials />
         </div>
       </div>
