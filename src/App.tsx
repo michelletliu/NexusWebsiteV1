@@ -72,20 +72,21 @@ function PartnersRow() {
 function LumaEventEmbed() {
   return (
     <div className="w-full flex justify-center">
-      <div className="w-full max-w-[1100px] h-[600px] rounded-md border border-[#bfcbda88] bg-white/10 overflow-hidden">
+      <div className="w-full max-w-[1100px] h-auto min-h-fit rounded-md border border-[#bfcbda88] bg-white/10 overflow-hidden">
         <iframe
-          src="https://luma.com/embed/event/evt-8OzAyhCPoSj9FU7/simple"
+          src="https://luma.com/embed/calendar/cal-mE8WzhLbY45ceEg/events"
           title="Luma Event"
           allow="fullscreen; payment"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-full block"
-          style={{ minHeight: '500px' }}  // Force minimum height
+          className="w-full h-auto block"
+          style={{ minHeight: '450px' }}
         />
       </div>
     </div>
   );
 }
+
 
 
 
@@ -438,8 +439,11 @@ function Frame4() {
       <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>WHAT WE DO</p>
       <p className="font-normal leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl text-center sm:w-[50vw] w-[80vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>We provide the most driven students with an extraordinary network, exclusive opportunities, and mentorship to achieve great things.</p>
       <Frame7 />
-      <div className="py-12 w-full">  {/* py-24 = 96px top and bottom */}
+      <div className="bg-[#f6f6f3] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
+      <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>UPCOMING EVENTS</p>
+      <div className="w-full">  {/* py-24 = 96px top and bottom */}
         <LumaEventEmbed />
+      </div>
       </div>
       <Frame16 />
     </div>
