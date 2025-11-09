@@ -152,7 +152,7 @@ function Button1({ onClick }: { onClick?: () => void }) {
 
 function HeaderCTA({ onJoinClick }: { onJoinClick: () => void }) {
   return (
-    <div className="content-stretch flex flex-col gap-[60px] items-center relative shrink-0 w-full max-w-none">
+    <div className="content-stretch flex flex-col gap-12 sm:gap-16 lg:gap-20 items-center relative shrink-0 w-full max-w-none">
       <Header />
       {/*
       <div className="
@@ -206,7 +206,7 @@ function HeroContent({ onJoinClick }: { onJoinClick: () => void }) {
       className="
         relative
         flex flex-col items-center
-        gap-20 sm:gap-28 lg:gap-36
+        gap-28 sm:gap-32 lg:gap-40
       "
     >
       <HeaderCTA onJoinClick={onJoinClick} />
@@ -267,7 +267,7 @@ function Hero({
     className="absolute inset-0 z-0 h-full w-auto min-w-full object-cover object-center"
   />
   <div className="relative z-50 mx-auto w-full max-w-[1440px] px-4 sm:px-8 md:px-12 lg:px-16">
-      <div className="flex flex-col items-stretch gap-48 pb-20 md:pb-28">
+      <div className="flex flex-col items-stretch gap-48 pb-16 md:pb-20">
       <NavBar
         className="relative z-50 w-full"
         onAboutClick={onAboutClick}
