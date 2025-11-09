@@ -10,6 +10,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Host Grotesk';
+  src:
+    url('https://fonts.cdnfonts.com/s/85268/HostGrotesk-Medium.woff2') format('woff2'),
+    url('https://fonts.cdnfonts.com/s/85268/HostGrotesk-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @font-face {
   font-family: 'Headline';
@@ -146,6 +156,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-synthesis: none;
   }
 }
 
@@ -343,23 +354,37 @@ html, body {
   overflow: hidden !important;
 }
 
-/* Make the Schools row immune to old overrides */
+/* Replace your existing .schools with this */
 .schools {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, max-content));
-  justify-content: center;
-  justify-items: center;
+  /* Evenly divide the row; columns expand to fill width */
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;   /* center logo inside each cell */
   align-items: center;
-  gap: clamp(1.25rem, 4vw, 3.5rem);
+  /* Responsive visual gap (purely cosmetic) */
+  gap: clamp(1rem, 4vw, 3rem);
 }
 
+/* Responsive column counts by breakpoint */
+@media (max-width: 1024px) {
+  .schools { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .schools { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+  .schools { grid-template-columns: 1fr; row-gap: 2rem; }
+}
+
+/* Keep logos from stretching while cells expand */
 .school-logo {
   display: block;
   height: clamp(32px, 3vw, 64px);
-  width: auto;
-  max-width: 220px;
+  width: auto;            /* don’t stretch the image horizontally */
+  max-width: 220px;       /* optional ceiling so huge screens don’t balloon logos */
   object-fit: contain;
 }
+
 
 .partners-row {
   display: grid;

@@ -1415,6 +1415,16 @@
 }
 
 @font-face {
+  font-family: Host Grotesk;
+  src:
+    url("https://fonts.cdnfonts.com/s/85268/HostGrotesk-Medium.woff2") format("woff2"),
+    url("https://fonts.cdnfonts.com/s/85268/HostGrotesk-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: Monomakh;
   src: url("https://fonts.cdnfonts.com/s/95993/Monomakh.woff") format("woff");
   font-weight: 400;

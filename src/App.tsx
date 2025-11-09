@@ -5,7 +5,7 @@ import imgHero from "./assets/Nexus Hero Splash.png";
 import imgPrimaryMonogram from "./assets/Teal USC.png";
 import imgScriptLogo from "./assets/Teal UCLA.png";
 import imgCaltechLogo2014 from "./assets/Teal Caltech.png";
-import imgUciAnteatersLogo from "./assets/Teal UCI.png";
+import imgUciAnteatersLogo from "./assets/UCI.png";
 import imgLmu from "./assets/Teal LMU.png";
 import imgLogoUcsd2 from "./assets/Teal UCSD.png";
 import NexusLogo from "./assets/Nexus Logo.png";
@@ -172,17 +172,17 @@ function HeaderCTA({ onJoinClick }: { onJoinClick: () => void }) {
 
 function Schools() {
   const schools = [
-    { src: imgPrimaryMonogram, alt: "USC" },
     { src: imgScriptLogo, alt: "UCLA" },
+    { src: imgPrimaryMonogram, alt: "USC" },
     { src: imgCaltechLogo2014, alt: "Caltech" },
     { src: imgUciAnteatersLogo, alt: "UCI" },
+    {src: imgLogoUcsd2, alt: "UC San Diego" },
     { src: imgLmu, alt: "LMU" },
-    { src: imgLogoUcsd2, alt: "UC San Diego" },
   ];
 
   return (
     <div className="w-full">
-      <div className="schools leading-none text-[0]">
+      <div className="schools justify-between leading-none text-[0]">
         {schools.map(s => (
           <img
             key={s.alt}
@@ -266,7 +266,7 @@ function Hero({
     alt="Splash"
     className="absolute inset-0 z-0 h-full w-auto min-w-full object-cover object-center"
   />
-  <div className="relative z-50 mx-auto w-full max-w-[1440px] px-4 sm:px-8 md:px-12 lg:px-16">
+  <div className="relative z-50 mx-auto w-full max-w-[1440px] px-10 sm:px-10 md:px-16 md:px-12 lg:px-16">
       <div className="flex flex-col items-stretch gap-48 pb-16 md:pb-20">
       <NavBar
         className="relative z-50 w-full"
