@@ -317,7 +317,7 @@ function Frame24() {
       <div className="h-0 relative shrink-0 w-full">
         <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1200 1">
-            <line id="Line 1" stroke="var(--stroke-0, #E5E5E5)" strokeOpacity="0.5" x2="1200" y1="0.5" y2="0.5" />
+            <line id="Line 1" stroke="var(--stroke-0, #E5E5E5)" strokeOpacity="0.2" x2="1200" y1="0.5" y2="0.5" />
           </svg>
         </div>
       </div>
