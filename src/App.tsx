@@ -485,7 +485,6 @@ function Frame15({ onApplyClick, onJoinTeamClick }: { onApplyClick: () => void; 
   return (
     <div className="content-stretch flex gap-[12px] items-center justify-center relative shrink-0 w-full">
       <Button2 onClick={onApplyClick} />
-      <Button3 onClick={onJoinTeamClick} />
     </div>
   );
 }
@@ -649,7 +648,7 @@ export default function App() {
   const handleEventsClick = () => scrollToSection('events');
   const handleContactClick = () => scrollToSection('contact');
   const handleJoinClick = () => scrollToSection('join-us');
-  const handleApplyClick = () => window.open('https://tally.so/r/mOJP5K', '_blank');
+  const handleApplyClick = () => window.open('https://nexussocal.notion.site/nexus-join-our-team?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnuzZyR-gf7X3XOsIpbTGPPVGVGrzDFuGtYT_rbrx0X34EY2vGQXD-3_JkAAs_aem_5vouHdjncZnqZoUuvJHohw', '_blank');
   const handleJoinTeamClick = () =>
     window.open(
       'https://excessive-pound-7e1.notion.site/Join-our-Team-116f0e56bcf380cf9158f8d435ca9f3a',
@@ -677,7 +676,7 @@ export default function App() {
       </section>
 
       <section id="join-us" className="w-full">
-        <Frame9 onApplyClick={handleApplyClick} onJoinTeamClick={handleJoinTeamClick} />
+        <Frame9 onApplyClick={handleApplyClick} />
       </section>
 
       <section id="contact" className="w-full">
