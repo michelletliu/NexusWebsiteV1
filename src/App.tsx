@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import svgPaths from "./imports/svg-gmt50cudxw";
 import imgHero from "./assets/Nexus Hero Splash.png";
 import imgPrimaryMonogram from "./assets/Teal USC.png";
 import imgScriptLogo from "./assets/Teal UCLA.png";
 import imgCaltechLogo2014 from "./assets/Teal Caltech.png";
-import imgUciAnteatersLogo from "./assets/uci.png";
+import imgUciAnteatersLogo from "./assets/UCI.png";
 import imgLmu from "./assets/Teal LMU.png";
 import imgLogoUcsd2 from "./assets/Teal UCSD.png";
 import NexusLogo from "./assets/Nexus Logo.png";
@@ -19,7 +19,7 @@ import imgRectangle7 from "./assets/image3.png";
 import imgRectangle8 from "./assets/image4.png";
 import imgRectangle9 from "./assets/a16z.png";
 import imgRectangle10 from "./assets/image6.png";
-import imgRectangle11 from "./assets/nexussundays.png";
+import imgRectangle11 from "./assets/NexusSundays.png";
 import imgJoinUs from "./assets/joinus.png";
 import imgFooter from "./assets/Footer.png";
 import { imgShifaazShamoonSLAk1GuBg90Unsplash, imgShifaazShamoonSLAk1GuBg90Unsplash2 } from "./imports/svg-itm1w";
@@ -54,7 +54,7 @@ function LogoCard({ src, alt }: { src: string; alt: string }) {
 
 function PartnersRow() {
   return (
-    <div className="w-full fade up" style={{ "--fade-delay": "delay", "--fade-duration": "400ms" } as React.CSSProperties}>
+    <div className="w-full fade-up" style={{ "--fade-delay": "0s", "--fade-duration": "400ms" } as React.CSSProperties}>
       <div className="partners-row mx-auto">
         <img
           src={imgRectangle12}
@@ -138,7 +138,7 @@ function Header() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2">
       <h1 className="font-normal text-7xl md:text-9xl text-white" style={{ fontFamily: 'Headline, serif', lineHeight: 1 }}>Nexus</h1>
-      <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"}}>Southern California's First Intercollegiate Entrepreneurship Society</p>
+      <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"} as React.CSSProperties}>Southern California's First Intercollegiate Entrepreneurship Society</p>
     </div>
   );
 }
@@ -155,7 +155,7 @@ function HeaderCTA({ onJoinClick }: { onJoinClick: () => void }) {
   return (
     <div className="content-stretch flex flex-col gap-10 sm:gap-14 lg:gap-16 items-center relative shrink-0 w-full max-w-none">
       <Header />
-      <Button1 className="pb-12" onClick={onJoinClick} />
+      <Button1 onClick={onJoinClick} />
       <Schools />
     </div>
   );
@@ -260,7 +260,6 @@ function Hero({
   <div className="relative z-50 mx-auto w-full max-w-[1440px] px-10 sm:px-10 md:px-16 md:px-12 lg:px-16">
       <div className="flex flex-col items-stretch gap-48 pb-16 md:pb-20">
       <NavBar
-        className="relative z-50 w-full"
         onAboutClick={onAboutClick}
         onEventsClick={onEventsClick}
         onContactClick={onContactClick}
@@ -666,7 +665,7 @@ export default function App() {
       </section>
 
       <section id="join-us" className="w-full">
-        <Frame9 onApplyClick={handleApplyClick} />
+        <Frame9 onApplyClick={handleApplyClick} onJoinTeamClick={handleJoinTeamClick} />
       </section>
 
       <section id="contact" className="w-full">
