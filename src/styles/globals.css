@@ -22,8 +22,16 @@
 
 
 @font-face {
+  font-family: 'Monomakh';
+  src: url('https://fonts.cdnfonts.com/s/95993/Monomakh.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Headline';
-  src: url('Williwaw-Book.otf') format('opentype');
+  src: url('https://fonts.cdnfonts.com/s/95993/Monomakh.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -109,6 +117,7 @@
 }
 
 @theme inline {
+  --font-headline: 'Monomakh', serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -166,24 +175,28 @@
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
     h1 {
+      font-family: 'Monomakh', serif;
       font-size: 8rem;
       font-weight: 400!important;
       line-height: 1.1;
     }
 
     h2 {
+      font-family: 'Monomakh', serif;
       font-size: var(--text-xl);
       font-weight: 400!important;
       line-height: 1.1;
     }
 
     h3 {
+      font-family: 'Monomakh', serif;
       font-size: var(--text-lg);
       font-weight: 400!important;
       line-height: 1.1;
     }
 
     h4 {
+      font-family: 'Monomakh', serif;
       font-size: var(--text-base);
       font-weight: 400!important;
       line-height: 1.1;
