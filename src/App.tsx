@@ -16,7 +16,7 @@ import imgRectangle15 from "./assets/ZFellows.png";
 import imgRectangle5 from "./assets/image1.png";
 import imgRectangle6 from "./assets/image2.png";
 import imgRectangle7 from "./assets/image3.png";
-import imgRectangle8 from "./assets/image4.png";
+import imgRectangle8 from "./assets/Nexus Dinner.jpg";
 import imgRectangle9 from "./assets/a16z.png";
 import imgRectangle10 from "./assets/image6.png";
 import imgRectangle11 from "./assets/NexusSundays.png";
@@ -71,18 +71,16 @@ function PartnersRow() {
 
 function LumaEventEmbed() {
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-full max-w-[1100px] h-auto min-h-fit rounded-md border border-[#bfcbda88] bg-white/10 overflow-hidden">
-        <iframe
-          src="https://luma.com/embed/calendar/cal-mE8WzhLbY45ceEg/events"
-          title="Luma Event"
-          allow="fullscreen; payment"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-auto block"
-          style={{ minHeight: '450px' }}
-        />
-      </div>
+    <div className="w-full h-auto min-h-fit bg-[#F7F8F9] rounded-md border border-neutral-200 overflow-hidden">
+      <iframe
+        src="https://luma.com/embed/calendar/cal-mE8WzhLbY45ceEg/events"
+        title="Luma Event"
+        allow="fullscreen; payment"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="w-full h-auto block"
+        style={{ minHeight: '450px' }}
+      />
     </div>
   );
 }
@@ -117,8 +115,8 @@ function NavLink2({ onClick }: { onClick?: () => void }) {
 
 function Button({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="bg-[#f6f6f3] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[8px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-white hover:scale-101" data-name="Button" onClick={onClick}>
-      <p className="font-normal leading-[normal] relative shrink-0 text-[#015358] text-[17px] text-nowrap whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join Us</p>
+    <div className="bg-[#f6f6f3] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[8px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-white " data-name="Button" onClick={onClick}>
+      <p className="font-normal leading-[normal] relative shrink-0 text-[#015358] text-base text-nowrap whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join Us</p>
     </div>
   );
 }
@@ -137,23 +135,23 @@ function Frame({ onAboutClick, onEventsClick, onContactClick, onJoinClick }: { o
 function Header() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2">
-      <h1 className="font-normal text-7xl md:text-9xl text-white" style={{ fontFamily: 'Headline, serif', lineHeight: 1 }}>Nexus</h1>
-      <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"} as React.CSSProperties}>Southern California's First Intercollegiate Entrepreneurship Society</p>
+      <h1 className="text-7xl md:text-8xl text-white" style={{ fontFamily: 'Monomakh, serif', lineHeight: 1 }}>Nexus</h1>
+      <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[30vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"} as React.CSSProperties}>Southern California's First Intercollegiate Entrepreneurship Society</p>
     </div>
   );
 }
 
 function Button1({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="bg-[#01939f] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-[#027983] hover:scale-101" data-name="Button" onClick={onClick}>
-      <p className="font-normal leading-[normal] relative shrink-0 text-base md:text-lg text-nowrap text-white whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join the Community</p>
+    <div className="bg-[#01939f] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-[#027983] " data-name="Button" onClick={onClick}>
+      <p className="font-normal leading-[normal] relative shrink-0 text-base md:text-base text-nowrap text-white whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join the Community</p>
     </div>
   );
 }
 
 function HeaderCTA({ onJoinClick }: { onJoinClick: () => void }) {
   return (
-    <div className="content-stretch flex flex-col gap-10 sm:gap-14 lg:gap-16 items-center relative shrink-0 w-full max-w-none">
+    <div className="content-stretch flex flex-col gap-16 lg:gap-20 items-center relative shrink-0 w-full max-w-none">
       <Header />
       <Button1 onClick={onJoinClick} />
       <Schools />
@@ -275,7 +273,7 @@ function Hero({
 function About() {
   return (
     <div
-      className="flex flex-col gap-10 items-start text-[#f6f6f3] text-3xl"
+      className="flex flex-col gap-10 items-start font-normal text-[#f6f6f3] text-3xl"
       style={{ fontFamily: 'Host Grotesk, sans-serif' }}
     >
       <div className="leading-normal sm:w-[50vw] w-[80vw]">
@@ -372,18 +370,18 @@ function AboutSection() {
   );
 }
 
-function Frame7() {
+function Trio() {
   return (
     <div className="max-w-[50vw] mx-auto flex items-center gap-8">
-      <p className="flex-1 basis-0 text-center font-normal text-[#1b1917] text-[clamp(1rem,2.5vw,1.375rem)]">
+      <p className="flex-1 basis-0 text-center font-normal text-neutral-500 text-xl" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>
         Connect
       </p>
       <div className="w-[2px] h-6 bg-[#dddddd] rounded" />
-      <p className="flex-1 basis-0 text-center font-normal text-[#1b1917] text-[clamp(1rem,2.5vw,1.375rem)]">
+      <p className="flex-1 basis-0 text-center font-normal text-neutral-500 text-xl" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>
         Build
       </p>
       <div className="w-[2px] h-6 bg-[#dddddd] rounded" />
-      <p className="flex-1 basis-0 text-center font-normal text-[#1b1917] text-[clamp(1rem,2.5vw,1.375rem)]">
+      <p className="flex-1 basis-0 text-center font-normal text-neutral-500 text-xl" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>
         Innovate
       </p>
     </div>
@@ -406,15 +404,14 @@ function Frame16() {
         (imgSrc, i) => (
           <div
             key={i}
-            className="relative rounded-[8px] overflow-hidden group cursor-pointer aspect-[4/3]"
+            className="relative rounded-[8px] overflow-hidden aspect-[4/3]"
           >
             <img
               alt=""
               src={imgSrc}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-[8px]"
+              className="absolute inset-0 w-full h-full object-cover rounded-[8px]"
             />
-            <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity" />
-          </div>
+                      </div>
         )
       )}
     </div>
@@ -426,14 +423,33 @@ function Frame4() {
   return (
     <div className="bg-[#f6f6f3] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
       <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>WHAT WE DO</p>
-      <p className="font-normal leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl text-center sm:w-[50vw] w-[80vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>We provide the most driven students with an extraordinary network, exclusive opportunities, and mentorship to achieve great things.</p>
-      <Frame7 />
-      <div className="bg-[#f6f6f3] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
+      <p className="font-normal leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl text-center sm:w-[50vw] w-[70vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>We provide the most driven students with an extraordinary network, exclusive opportunities, and mentorship to achieve great things.</p>
+      <Trio />
+    </div>
+  );
+}
+
+function UpcomingEvents() {
+  return (
+    <div className="bg-[#f0f0eb] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
       <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>UPCOMING EVENTS</p>
-      <div className="w-full">  {/* py-24 = 96px top and bottom */}
-        <LumaEventEmbed />
-      </div>
-      </div>
+      <p className="font-normal leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl text-center sm:w-[40vw] w-[70vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join us for conversations, connections, and a little bit of magic.</p>
+      <a 
+        href="https://lu.ma/nexussocal?k=c" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="bg-[#01939f] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-[#027983]  no-underline"
+      >
+        <p className="font-normal leading-[normal] relative shrink-0 text-base md:text-base text-nowrap text-white whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Subscribe to Calendar</p>
+      </a>
+      <LumaEventEmbed />
+    </div>
+  );
+}
+
+function PhotoGallery() {
+  return (
+    <div className="bg-[#f6f6f3] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
       <Frame16 />
     </div>
   );
@@ -449,8 +465,8 @@ function Frame14() {
 
 function Button2({ onClick }: { onClick?: () => void }) {
   return (
-    <div className="bg-[#01939f] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-[#027983] hover:scale-101" data-name="Button" onClick={onClick}>
-      <p className="font-normal leading-[normal] relative shrink-0 text-[17px] text-nowrap text-white whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Apply Now</p>
+    <div className="bg-[#01939f] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-[#027983] " data-name="Button" onClick={onClick}>
+      <p className="font-normal leading-[normal] relative shrink-0 text-base text-nowrap text-white whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Apply Now</p>
     </div>
   );
 }
@@ -461,11 +477,11 @@ function Button3() {
       href="https://excessive-pound-7e1.notion.site/Join-our-Team-116f0e56bcf380cf9158f8d435ca9f3a" 
       target="_blank" 
       rel="noopener noreferrer"
-      className="bg-[#f6f6f3] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:opacity-70 hover:scale-101 no-underline inline-block" 
+      className="bg-[#f6f6f3] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:opacity-70  no-underline inline-block" 
       data-name="Button"
     >
       <div aria-hidden="true" className="absolute border border-[#01939f] border-solid inset-0 pointer-events-none rounded-[999px]" />
-      <p className="font-normal leading-[normal] relative shrink-0 text-[#01939f] text-[17px] text-nowrap whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join the Internal Team</p>
+      <p className="font-normal leading-[normal] relative shrink-0 text-[#01939f] text-base text-nowrap whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join the Internal Team</p>
     </a>
   );
 }
@@ -582,7 +598,7 @@ function Links() {
 function Footer() {
   return (
     <div className="relative w-full overflow-hidden" data-name="Footer">
-      {/* Footer image covers the dynamic content height */}
+      {/* Footer image as background */}
       <img
         src={imgFooter}
         alt="splash"
@@ -590,8 +606,8 @@ function Footer() {
         aria-hidden
       />
 
-      {/* Links define the footer height */}
-      <div className="relative flex items-center justify-center px-10 sm:px-10 md:px-16 lg:px-20 py-20">
+      {/* Links define the height, with min-height on desktop to show more of the image */}
+      <div className="relative flex items-center md:items-end justify-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 md:pb-0 md:min-h-[400px] lg:min-h-[500px]">
         <Links />
       </div>
     </div>
@@ -658,10 +674,9 @@ export default function App() {
       </section>
 
       <section id="events" className="w-full">
-        {/* If Frame4 needs an edge-to-edge background but a parent has max-w, use the breaker below */}
-        {/* <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen"> */}
-          <Frame4 />
-        {/* </div> */}
+        <Frame4 />
+        <UpcomingEvents />
+        <PhotoGallery />
       </section>
 
       <section id="join-us" className="w-full">
