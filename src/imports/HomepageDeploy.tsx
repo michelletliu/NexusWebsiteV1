@@ -128,7 +128,8 @@ function Frame() {
 function HeroText() {
   return (
     <div className="flex flex-col items-center gap-4 px-2 sm:px-4 text-center">
-      <p className="font-['Monomakh:Regular',_sans-serif] text-white leading-none tracking-[4px] sm:tracking-[6px] md:tracking-[8px] text-[72px] sm:text-[110px] lg:text-[140px]">
+      <p
+        className="font-['Joan',_ui-serif,_Georgia,_Cambria,_'Times_New_Roman',_Times,_serif] text-white leading-none tracking-wide text-[72px] sm:text-[110px] lg:text-[140px] font-normal"      >
         Nexus
       </p>
       <p className="font-['Host_Grotesk:Regular',_sans-serif] text-[#015358] text-base sm:text-lg md:text-xl max-w-[28rem]">
@@ -171,7 +172,7 @@ function Schools() {
 
 function Frame5() {
   return (
-    <div className="flex w-full flex-col items-center gap-12 sm:gap-16 px-4 sm:px-6 lg:px-10 py-6">
+    <div className="flex w-full flex-col items-center gap-12 sm:gap-16 px-4 sm:px-6 lg:px-10 py-6 mt-10 sm:mt-12 md:mt-14">
       <Frame6 />
       <Schools />
     </div>

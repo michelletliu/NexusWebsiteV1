@@ -3,6 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 @font-face {
+  font-family: 'Joan';
+  src: url('Joan-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Host Grotesk';
   src: url('HostGrotesk-Regular.ttf') format('truetype');
   font-weight: 400;
@@ -31,7 +39,7 @@
 
 @font-face {
   font-family: 'Headline';
-  src: url('https://fonts.cdnfonts.com/s/95993/Monomakh.woff') format('woff');
+  src: url('Joan-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -117,7 +125,7 @@
 }
 
 @theme inline {
-  --font-headline: 'Monomakh', serif;
+  --font-headline: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -174,29 +182,45 @@
  */
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
     h1 {
-      font-family: 'Monomakh', serif;
       font-size: 8rem;
       font-weight: 400!important;
       line-height: 1.1;
     }
 
     h2 {
-      font-family: 'Monomakh', serif;
+      font-family: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
       font-size: var(--text-xl);
       font-weight: 400!important;
       line-height: 1.1;
     }
 
     h3 {
-      font-family: 'Monomakh', serif;
+      font-family: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
       font-size: var(--text-lg);
       font-weight: 400!important;
       line-height: 1.1;
     }
 
     h4 {
-      font-family: 'Monomakh', serif;
+      font-family: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-size: var(--text-base);
+      font-weight: 400!important;
+      line-height: 1.1;
+    }
+
+    h5 {
+      font-family: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      font-size: var(--text-base);
+      font-weight: 400!important;
+      line-height: 1.1;
+    }
+
+    h6 {
+      font-family: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
       font-size: var(--text-base);
       font-weight: 400!important;
       line-height: 1.1;
@@ -219,6 +243,12 @@
       font-weight: var(--font-weight-normal);
       line-height: 1.5;
     }
+  }
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Joan', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 }
 

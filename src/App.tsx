@@ -134,8 +134,11 @@ function Frame({ onAboutClick, onEventsClick, onContactClick, onJoinClick }: { o
 
 function Header() {
   return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2">
-      <h1 className="text-7xl md:text-8xl text-white" style={{ fontFamily: 'Monomakh, serif', lineHeight: 1 }}>Nexus</h1>
+    <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2 mt-10 sm:mt-12 md:mt-14">
+      <h1
+        className="text-7xl md:text-8xl text-white font-normal tracking-wider">
+        Nexus
+      </h1>
       <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[30vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"} as React.CSSProperties}>Southern California's First Intercollegiate Entrepreneurship Society</p>
     </div>
   );
