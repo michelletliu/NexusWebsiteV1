@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import svgPaths from "./imports/svg-gmt50cudxw";
-import imgHero from "./assets/Nexus Hero Splash.png";
+import imgHero from "./assets/Nexus Hero Splash 2.png";
 import imgPrimaryMonogram from "./assets/Teal USC.png";
 import imgScriptLogo from "./assets/Teal UCLA.png";
 import imgCaltechLogo2014 from "./assets/Teal Caltech.png";
@@ -136,7 +136,7 @@ function Header() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2 mt-10 sm:mt-12 md:mt-14">
       <h1
-        className="text-7xl md:text-8xl text-white font-normal tracking-wider">
+        className="text-8xl md:text-9xl font-normal tracking-tight bg-gradient-to-r from-[#003539] to-[#01939F] bg-clip-text text-transparent">
         Nexus
       </h1>
       <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[30vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"} as React.CSSProperties}>Southern California's First Intercollegiate Entrepreneurship Society</p>
@@ -154,9 +154,11 @@ function Button1({ onClick }: { onClick?: () => void }) {
 
 function HeaderCTA({ onJoinClick }: { onJoinClick: () => void }) {
   return (
-    <div className="content-stretch flex flex-col gap-16 lg:gap-20 items-center relative shrink-0 w-full max-w-none">
+    <div className="content-stretch flex flex-col gap-16 lg:gap-24 items-center relative shrink-0 w-full max-w-none">
+      <div className="content-stretch flex flex-col gap-12 lg:gap-16 items-center relative shrink-0 w-full max-w-none">
       <Header />
       <Button1 onClick={onJoinClick} />
+      </div>
       <Schools />
     </div>
   );
