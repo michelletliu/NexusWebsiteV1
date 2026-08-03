@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import { ScrollReveal } from './components/ScrollReveal';
+import { Analytics } from '@vercel/analytics/react';
 import svgPaths from "./imports/svg-gmt50cudxw";
 import imgHero from "./assets/Nexus Hero Splash 2.png";
 import imgPrimaryMonogram from "./assets/Teal USC.png";
@@ -1004,6 +1005,7 @@ export default function App() {
           </div>
         </div>
       </section>
+      <Analytics />
     </div>
   );
 }
