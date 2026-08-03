@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useMediaQuery } from './hooks/useMediaQuery';
+import { ScrollReveal } from './components/ScrollReveal';
 import svgPaths from "./imports/svg-gmt50cudxw";
 import imgHero from "./assets/Nexus Hero Splash 2.png";
 import imgPrimaryMonogram from "./assets/Teal USC.png";
@@ -18,10 +20,18 @@ import imgRectangle6 from "./assets/image2.png";
 import imgRectangle7 from "./assets/image3.png";
 import imgRectangle8 from "./assets/Nexus Dinner.jpg";
 import imgRectangle9 from "./assets/a16z.png";
-import imgRectangle10 from "./assets/image6.png";
 import imgRectangle11 from "./assets/NexusSundays.png";
 import imgJoinUs from "./assets/joinus.png";
 import imgFooter from "./assets/Footer.png";
+import imgWhatWeDo from "./assets/nexus-dinner-what-we-do.png";
+import imgWhatWeDoDinnerPrep from "./assets/what-we-do-dinner-prep.png";
+import imgWhatWeDoCast from "./assets/what-we-do-cast.png";
+import imgWhatWeDoFounders from "./assets/what-we-do-founders.png";
+import imgWhatWeDoSiMon from "./assets/what-we-do-si-mon.png";
+import imgWhatWeDoSips from "./assets/what-we-do-sips.png";
+import imgWhatWeDoTeam from "./assets/what-we-do-team.png";
+import imgWhatWeDoChef from "./assets/what-we-do-chef.png";
+import imgWhatWeDoNextDinner from "./assets/what-we-do-next-dinner.png";
 import { imgShifaazShamoonSLAk1GuBg90Unsplash, imgShifaazShamoonSLAk1GuBg90Unsplash2 } from "./imports/svg-itm1w";
 import './styles/globals.css';  
 
@@ -54,7 +64,7 @@ function LogoCard({ src, alt }: { src: string; alt: string }) {
 
 function PartnersRow() {
   return (
-    <div className="w-full fade-up" style={{ "--fade-delay": "0s", "--fade-duration": "400ms" } as React.CSSProperties}>
+    <div className="w-full">
       <div className="partners-row mx-auto">
         <img
           src={imgRectangle12}
@@ -135,11 +145,15 @@ function Frame({ onAboutClick, onEventsClick, onContactClick, onJoinClick }: { o
 function Header() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 text-center gap-2 mt-10 sm:mt-12 md:mt-14">
-      <h1
-        className="text-8xl md:text-9xl font-normal tracking-tight bg-gradient-to-r from-[#003539] to-[#01939F] bg-clip-text text-transparent">
-        Nexus
-      </h1>
-      <p className="font-normal fade-up leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[30vw]" style={{ fontFamily: 'Host Grotesk, sans-serif', "--fade-delay": "0s", "--fade-duration": "400ms"} as React.CSSProperties}>Southern California's First Intercollegiate Entrepreneurship Society</p>
+      <ScrollReveal>
+        <h1
+          className="text-8xl md:text-9xl font-normal tracking-tight bg-gradient-to-r from-[#003539] to-[#01939F] bg-clip-text text-transparent">
+          Nexus
+        </h1>
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+        <p className="font-normal leading-[normal] min-w-full relative shrink-0 text-[#015358] text-xl text-pretty md:text-2xl w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[30vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Southern California's First Intercollegiate Entrepreneurship Society</p>
+      </ScrollReveal>
     </div>
   );
 }
@@ -157,7 +171,9 @@ function HeaderCTA({ onJoinClick }: { onJoinClick: () => void }) {
     <div className="content-stretch flex flex-col gap-16 lg:gap-24 items-center relative shrink-0 w-full max-w-none">
       <div className="content-stretch flex flex-col gap-12 lg:gap-16 items-center relative shrink-0 w-full max-w-none">
       <Header />
-      <Button1 onClick={onJoinClick} />
+      <ScrollReveal delay={200}>
+        <Button1 onClick={onJoinClick} />
+      </ScrollReveal>
       </div>
       <Schools />
     </div>
@@ -175,7 +191,7 @@ function Schools() {
   ];
 
   return (
-    <div className="w-full">
+    <ScrollReveal className="w-full">
       <div className="schools md:justify-between max-md:justify-center max-md:!gap-8 leading-none text-[0]">
         {schools.map(s => (
           <img
@@ -186,7 +202,7 @@ function Schools() {
           />
         ))}
       </div>
-    </div>
+    </ScrollReveal>
   );
 }
 
@@ -260,7 +276,7 @@ function Hero({
     alt="Splash"
     className="absolute inset-0 z-0 h-full w-auto min-w-full object-cover object-center"
   />
-  <div className="relative z-50 mx-auto w-full max-w-[1440px] px-10 sm:px-10 md:px-16 md:px-12 lg:px-16">
+  <div className="section-gutter relative z-50 mx-auto w-full max-w-[1440px]">
       <div className="flex flex-col items-stretch gap-48 pb-16 md:pb-20">
       <NavBar
         onAboutClick={onAboutClick}
@@ -278,7 +294,7 @@ function Hero({
 function About() {
   return (
     <div
-      className="flex flex-col gap-10 items-start font-normal text-[#f6f6f3] text-3xl"
+      className="flex flex-col gap-10 items-start font-normal text-[#f6f6f3] text-3xl text-pretty"
       style={{ fontFamily: 'Host Grotesk, sans-serif' }}
     >
       <div className="leading-normal sm:w-[50vw] w-[80vw]">
@@ -305,7 +321,9 @@ function Frame23() {
 function Frame24() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-start relative shrink-0 w-full">
-      <Frame23 />
+      <ScrollReveal>
+        <Frame23 />
+      </ScrollReveal>
       <div className="h-0 relative shrink-0 w-full">
         <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1200 1">
@@ -365,34 +383,14 @@ function Frame22() {
 
 function AboutSection() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-[60px] items-start px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative shrink-0 max-w-[1440px] w-full"   style={{
-      background:
-        'radial-gradient(307.49% 203.57% at 180% -20%, #01939F 28.88%, #015358 70%)',
-    }}> 
+    <div className="section-gutter about-surface box-border content-stretch flex flex-col gap-[60px] items-start py-20 relative shrink-0 max-w-[1440px] w-full">
       <Frame24 />
-      <Frame22 />
+      <ScrollReveal className="w-full">
+        <Frame22 />
+      </ScrollReveal>
     </div>
   );
 }
-
-function Trio() {
-  return (
-    <div className="max-w-[50vw] mx-auto flex items-center gap-8">
-      <p className="flex-1 basis-0 text-center font-normal text-neutral-500 text-xl" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>
-        Connect
-      </p>
-      <div className="w-[2px] h-6 bg-[#dddddd] rounded" />
-      <p className="flex-1 basis-0 text-center font-normal text-neutral-500 text-xl" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>
-        Build
-      </p>
-      <div className="w-[2px] h-6 bg-[#dddddd] rounded" />
-      <p className="flex-1 basis-0 text-center font-normal text-neutral-500 text-xl" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>
-        Innovate
-      </p>
-    </div>
-  );
-}
-
 
 function Frame16() {
   return (
@@ -405,18 +403,17 @@ function Frame16() {
         auto-rows-[minmax(0,_1fr)] /* each row adjusts evenly */
       "
     >
-      {[imgRectangle5, imgRectangle6, imgJoinUs, imgRectangle8, imgRectangle9, imgRectangle10].map(
+      {[imgRectangle5, imgRectangle6, imgJoinUs, imgRectangle8, imgRectangle9, imgRectangle11].map(
         (imgSrc, i) => (
-          <div
-            key={i}
-            className="relative rounded-[8px] overflow-hidden aspect-[4/3]"
-          >
-            <img
-              alt=""
-              src={imgSrc}
-              className="absolute inset-0 w-full h-full object-cover rounded-[8px]"
-            />
-                      </div>
+          <ScrollReveal key={i} delay={(i % 3) * 80}>
+            <div className="relative rounded-[8px] overflow-hidden aspect-[4/3]">
+              <img
+                alt=""
+                src={imgSrc}
+                className="absolute inset-0 w-full h-full object-cover rounded-[8px]"
+              />
+            </div>
+          </ScrollReveal>
         )
       )}
     </div>
@@ -424,37 +421,378 @@ function Frame16() {
 }
 
 
+const whatWeDoImages = [
+  { src: imgWhatWeDo, alt: "Nexus members sharing a candlelit dinner" },
+  { src: imgWhatWeDoDinnerPrep, alt: "Dinner plates prepared for a Nexus gathering" },
+  { src: imgWhatWeDoCast, alt: "Polaroid portraits from a Nexus dinner" },
+  { src: imgWhatWeDoFounders, alt: "Consumer founders gathered for a Nexus dinner" },
+  { src: imgWhatWeDoSiMon, alt: "A Panamanian fusion dinner at Si Mon" },
+  { src: imgWhatWeDoSips, alt: "Guests enjoying drinks and dinner at a Nexus gathering" },
+  { src: imgWhatWeDoTeam, alt: "The Nexus team at Si Mon" },
+  { src: imgWhatWeDoChef, alt: "Dinner crafted by a retired Michelin chef" },
+  { src: imgWhatWeDoNextDinner, alt: "A tray of food prepared for a Nexus dinner" },
+];
+
+const CAROUSEL_AUTOPLAY_SPEED = 36;
+
+function WhatWeDoCarousel() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const animationFrameRef = useRef<number | null>(null);
+  const hasInteractedRef = useRef(false);
+  const isVisibleRef = useRef(false);
+  const isJumpingRef = useRef(false);
+  const setWidthRef = useRef(0);
+  const slideCount = whatWeDoImages.length;
+  const loopImages = [...whatWeDoImages, ...whatWeDoImages, ...whatWeDoImages];
+
+  const stopAutoplay = () => {
+    if (hasInteractedRef.current) return;
+    hasInteractedRef.current = true;
+    if (animationFrameRef.current !== null) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+    // Keep scrollSnapType 'none'. Re-enabling proximity snap-start pulls the
+    // gap-centered phase onto card edges and breaks one-card chevron steps.
+  };
+
+  // Vertical wheel events are just the page scrolling past the carousel.
+  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) stopAutoplay();
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (['ArrowLeft', 'ArrowRight', 'Home', 'End', 'PageUp', 'PageDown', ' '].includes(event.key)) {
+      stopAutoplay();
+    }
+  };
+
+  const getMetrics = (carousel: HTMLDivElement) => {
+    const firstImage = carousel.querySelector('img');
+    if (!firstImage) return null;
+    const styles = window.getComputedStyle(carousel);
+    const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+    const cardWidth = firstImage.getBoundingClientRect().width;
+    if (cardWidth <= 0) return null;
+    const stride = cardWidth + gap;
+    return { cardWidth, gap, stride, setWidth: stride * slideCount };
+  };
+
+  const getStride = (carousel: HTMLDivElement) => getMetrics(carousel)?.stride ?? 0;
+
+  const measureSetWidth = (carousel: HTMLDivElement) => getMetrics(carousel)?.setWidth ?? 0;
+
+  // Park so the viewport centerline bisects a gap (not a card): content at
+  // setWidth + cardWidth + gap/2 lands at clientWidth/2. Stay in the middle
+  // copy so seamless wrap has headroom on both sides.
+  const getCenteredOffset = (carousel: HTMLDivElement, setWidth: number) => {
+    const metrics = getMetrics(carousel);
+    if (!metrics || setWidth <= 0) return setWidth;
+    const { cardWidth, gap } = metrics;
+    let left = setWidth + cardWidth + gap / 2 - carousel.clientWidth / 2;
+    while (left < setWidth) left += setWidth;
+    while (left >= setWidth * 2) left -= setWidth;
+    return left;
+  };
+
+  const jumpTo = (carousel: HTMLDivElement, left: number) => {
+    isJumpingRef.current = true;
+    const previousSnap = carousel.style.scrollSnapType;
+    carousel.style.scrollSnapType = 'none';
+    carousel.scrollLeft = left;
+    void carousel.offsetHeight;
+    carousel.style.scrollSnapType = previousSnap;
+    requestAnimationFrame(() => {
+      isJumpingRef.current = false;
+    });
+  };
+
+  const normalizeScroll = () => {
+    const carousel = carouselRef.current;
+    if (!carousel || isJumpingRef.current) return;
+
+    const setWidth = setWidthRef.current || measureSetWidth(carousel);
+    if (setWidth <= 0) return;
+    setWidthRef.current = setWidth;
+
+    const { scrollLeft } = carousel;
+    if (scrollLeft < setWidth) {
+      jumpTo(carousel, scrollLeft + setWidth);
+    } else if (scrollLeft >= setWidth * 2) {
+      jumpTo(carousel, scrollLeft - setWidth);
+    }
+  };
+
+  const scrollCarousel = (direction: -1 | 1) => {
+    stopAutoplay();
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    normalizeScroll();
+    const stride = getStride(carousel);
+    const setWidth = setWidthRef.current || measureSetWidth(carousel);
+    if (stride <= 0 || setWidth <= 0) return;
+
+    // Snap stays 'none' so proximity snap cannot shorten or reverse the step.
+    carousel.style.scrollSnapType = 'none';
+
+    // Keep the smooth scroll inside the middle copy so normalizeScroll cannot
+    // jump mid-animation and cancel scrollBy.
+    const next = carousel.scrollLeft + direction * stride;
+    if (direction > 0 && next >= setWidth * 2) {
+      jumpTo(carousel, carousel.scrollLeft - setWidth);
+    } else if (direction < 0 && next < setWidth) {
+      jumpTo(carousel, carousel.scrollLeft + setWidth);
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    carousel.scrollBy({
+      left: direction * stride,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
+  };
+
+  useLayoutEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const placeCentered = () => {
+      if (hasInteractedRef.current) return false;
+      const setWidth = measureSetWidth(carousel);
+      if (setWidth <= 0) return false;
+      setWidthRef.current = setWidth;
+      jumpTo(carousel, getCenteredOffset(carousel, setWidth));
+      return true;
+    };
+
+    placeCentered();
+    // Re-measure after layout/fonts settle so the first paint is truly centered.
+    const rafId = requestAnimationFrame(() => {
+      placeCentered();
+    });
+
+    const images = [...carousel.querySelectorAll('img')];
+    const onImageReady = () => placeCentered();
+    for (const image of images) {
+      if (!image.complete) image.addEventListener('load', onImageReady);
+    }
+
+    let settleTimer = 0;
+    const onScroll = () => {
+      if (isJumpingRef.current) return;
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(normalizeScroll, 80);
+    };
+    const onScrollEnd = () => normalizeScroll();
+
+    carousel.addEventListener('scroll', onScroll, { passive: true });
+    carousel.addEventListener('scrollend', onScrollEnd);
+
+    const resizeObserver = new ResizeObserver(() => {
+      // Before any interaction, always re-center. Preserving "offset from center"
+      // here wrongly locked in the flush-left position from the pre-measure frame.
+      if (!hasInteractedRef.current) {
+        placeCentered();
+        return;
+      }
+
+      const prevSetWidth = setWidthRef.current;
+      const prevCentered = getCenteredOffset(carousel, prevSetWidth || measureSetWidth(carousel));
+      const offsetFromCentered =
+        prevSetWidth > 0
+          ? ((carousel.scrollLeft - prevCentered) % prevSetWidth + prevSetWidth) % prevSetWidth
+          : 0;
+      const nextSetWidth = measureSetWidth(carousel);
+      if (nextSetWidth <= 0) return;
+      setWidthRef.current = nextSetWidth;
+      jumpTo(carousel, getCenteredOffset(carousel, nextSetWidth) + offsetFromCentered);
+    });
+    resizeObserver.observe(carousel);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.clearTimeout(settleTimer);
+      for (const image of images) {
+        image.removeEventListener('load', onImageReady);
+      }
+      carousel.removeEventListener('scroll', onScroll);
+      carousel.removeEventListener('scrollend', onScrollEnd);
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotionQuery.matches) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(carousel);
+
+    // Disable snap for autoplay and keep it off after interaction so
+    // gap-centered paging and chevron scrollBy are not pulled to snap-start.
+    carousel.style.scrollSnapType = 'none';
+
+    let previousTime: number | null = null;
+    const animate = (time: number) => {
+      // stopAutoplay cancels the pending frame, but also gate here so a
+      // mid-callback interaction cannot reschedule and keep writing scrollLeft
+      // over the chevron's scrollBy.
+      if (hasInteractedRef.current) {
+        animationFrameRef.current = null;
+        return;
+      }
+
+      if (previousTime !== null && isVisibleRef.current && !document.hidden) {
+        const setWidth = setWidthRef.current || measureSetWidth(carousel);
+        if (setWidth > 0) {
+          setWidthRef.current = setWidth;
+          carousel.scrollLeft += CAROUSEL_AUTOPLAY_SPEED * Math.min(time - previousTime, 64) / 1000;
+
+          // The adjacent copy has identical pixels, so this wrap is invisible.
+          if (carousel.scrollLeft >= setWidth * 2) {
+            carousel.scrollLeft -= setWidth;
+          }
+        }
+      }
+
+      previousTime = time;
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    const handleReducedMotion = (event: MediaQueryListEvent) => {
+      if (event.matches) stopAutoplay();
+    };
+    const handleVisibilityChange = () => {
+      previousTime = null;
+    };
+    reducedMotionQuery.addEventListener('change', handleReducedMotion);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      observer.disconnect();
+      reducedMotionQuery.removeEventListener('change', handleReducedMotion);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+      carousel.style.scrollSnapType = '';
+    };
+  }, []);
+
+  const chevronButtonClassName =
+    'flex size-10 items-center justify-center rounded-sm text-[rgba(27,25,23,0.5)] transition-[color,transform] duration-150 hover:text-[#1b1917] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#01939f]';
+
+  return (
+    <div className="relative left-1/2 w-screen max-w-none -translate-x-1/2">
+      <div className="section-gutter mb-6 flex justify-end gap-2">
+        <button
+          type="button"
+          aria-label="Show previous images"
+          aria-controls="what-we-do-carousel"
+          onClick={() => scrollCarousel(-1)}
+          className={chevronButtonClassName}
+        >
+          <ChevronLeft aria-hidden="true" className="size-6" strokeWidth={1.5} />
+        </button>
+        <button
+          type="button"
+          aria-label="Show next images"
+          aria-controls="what-we-do-carousel"
+          onClick={() => scrollCarousel(1)}
+          className={chevronButtonClassName}
+        >
+          <ChevronRight aria-hidden="true" className="size-6" strokeWidth={1.5} />
+        </button>
+      </div>
+      <div
+        id="what-we-do-carousel"
+        ref={carouselRef}
+        className="flex gap-4 w-full overflow-x-auto overscroll-x-contain snap-x snap-proximity pb-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#01939f] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        role="region"
+        aria-label="Nexus community highlights"
+        tabIndex={0}
+        onPointerDown={stopAutoplay}
+        onWheel={handleWheel}
+        onKeyDown={handleKeyDown}
+      >
+        {loopImages.map(({ src, alt }, index) => {
+          const isClone = index < slideCount || index >= slideCount * 2;
+          return (
+            <img
+              key={`${src}-${index}`}
+              src={src}
+              alt={isClone ? '' : alt}
+              aria-hidden={isClone || undefined}
+              className="flex-none w-[72vw] sm:w-[320px] md:w-[360px] aspect-[4/5] object-cover rounded-[8px] snap-start"
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function Frame4() {
   return (
-    <div className="bg-[#f6f6f3] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
-      <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>WHAT WE DO</p>
-      <p className="font-normal leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl text-center sm:w-[50vw] w-[70vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>We provide the most driven students with an extraordinary network, exclusive opportunities, and mentorship to achieve great things.</p>
-      <Trio />
-    </div>
+    <section className="section-gutter bg-[#f6f6f3] box-border py-16 md:py-20 relative w-full">
+      <div className="flex flex-col gap-14 items-center max-w-[1440px] mx-auto">
+        <div className="flex flex-col gap-8 items-center">
+          <ScrollReveal>
+            <p className="leading-[normal] not-italic text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>WHAT WE DO</p>
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <p className="font-normal leading-[1.3] text-[#1b1917] text-3xl text-center text-pretty w-[70vw] sm:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>We provide the most driven students with an extraordinary network, exclusive opportunities, and mentorship to achieve great things.</p>
+          </ScrollReveal>
+        </div>
+        <ScrollReveal className="w-full">
+          <WhatWeDoCarousel />
+        </ScrollReveal>
+      </div>
+    </section>
   );
 }
 
 function UpcomingEvents() {
   return (
-    <div className="bg-[#f0f0eb] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
-      <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>UPCOMING EVENTS</p>
-      <p className="font-normal leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl text-center sm:w-[40vw] w-[70vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join us for conversations, connections, and a little bit of magic.</p>
-      <a 
-        href="https://lu.ma/nexussocal?k=c" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="bg-[#01939f] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-all hover:bg-[#027983]  no-underline"
-      >
-        <p className="font-normal leading-[normal] relative shrink-0 text-base md:text-base text-nowrap text-white whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Subscribe to Calendar</p>
-      </a>
-      <LumaEventEmbed />
+    <div className="section-gutter bg-[#f0f0eb] box-border grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-stretch py-20 relative w-full">
+      <div className="flex flex-col gap-6 items-start justify-start">
+        <ScrollReveal>
+          <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-left text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>UPCOMING EVENTS</p>
+        </ScrollReveal>
+        <ScrollReveal className="w-full" delay={100}>
+          <p className="font-normal leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl text-pretty text-left w-[70vw] sm:w-[40vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Join us for conversations, connections, and a little bit of magic.</p>
+        </ScrollReveal>
+        <ScrollReveal delay={200}>
+          <a 
+            href="https://lu.ma/nexussocal?k=c" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#01939f] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0 cursor-pointer transition-colors hover:bg-[#027983] no-underline"
+          >
+            <p className="font-normal leading-[normal] relative shrink-0 text-base md:text-base text-nowrap text-white whitespace-pre" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>Subscribe to Calendar</p>
+          </a>
+        </ScrollReveal>
+      </div>
+      <ScrollReveal className="w-full" delay={100}>
+        <LumaEventEmbed />
+      </ScrollReveal>
     </div>
   );
 }
 
 function PhotoGallery() {
   return (
-    <div className="bg-[#f6f6f3] box-border flex flex-col gap-[40px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative w-full">
+    <div className="section-gutter bg-[#f6f6f3] box-border flex flex-col gap-[40px] items-center py-20 relative w-full">
       <Frame16 />
     </div>
   );
@@ -463,7 +801,7 @@ function PhotoGallery() {
 function Frame14() {
   return (
     <div className="content-stretch flex flex-col font-normal items-center leading-[1.3] relative shrink-0 text-[#1b1917] text-3xl sm:w-[40vw] w-[70vw]" style={{ fontFamily: 'Host Grotesk, sans-serif' }}>
-      <p className="relative shrink-0 w-full text-center">{`If you’re someone who loves taking initiative and building meaningful projects, we’d love to get to know you!`}</p>
+      <p className="relative shrink-0 w-full text-center text-pretty">{`If you’re someone who loves taking initiative and building meaningful projects, we’d love to get to know you!`}</p>
     </div>
   );
 }
@@ -499,44 +837,20 @@ function Frame15({ onApplyClick, onJoinTeamClick }: { onApplyClick: () => void; 
   );
 }
 
-function Frame18({ onApplyClick, onJoinTeamClick }: { onApplyClick: () => void; onJoinTeamClick: () => void }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[60px] items-center relative shrink-0">
-      <Frame14 />
-      <Frame15 onApplyClick={onApplyClick} onJoinTeamClick={onJoinTeamClick} />
-    </div>
-  );
-}
-
-function Frame19() {
-  return (
-    <div className="content-stretch flex flex-col gap-[60px] items-center relative rounded-[20px] w-full lg:w-[20vw]">
-      <div className="relative w-full lg:w-[10vw] rounded-[12px] aspect-[3/2]">
-        <img
-          src={imgRectangle11}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center rounded-[12px] pointer-events-none"
-        />
-      </div>
-    </div>
-  );
-}
-
-
-function Frame20({ onApplyClick, onJoinTeamClick }: { onApplyClick: () => void; onJoinTeamClick: () => void }) {
-  return (
-    <div className="content-stretch flex flex-col gap-[60px] items-center justify-center relative shrink-0">
-      <Frame18 onApplyClick={onApplyClick} onJoinTeamClick={onJoinTeamClick} />
-      <Frame19 />
-    </div>
-  );
-}
-
 function Frame9({ onApplyClick, onJoinTeamClick }: { onApplyClick: () => void; onJoinTeamClick: () => void }) {
   return (
-    <div className="bg-[#f0f0eb] box-border content-stretch flex flex-col gap-[60px] items-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 relative shrink-0 max-w-[1440px] w-full">
-      <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>JOIN US</p>
-      <Frame20 onApplyClick={onApplyClick} onJoinTeamClick={onJoinTeamClick} />
+    <div className="section-gutter bg-[#f0f0eb] box-border content-stretch flex flex-col gap-[60px] items-center py-20 relative shrink-0 max-w-[1440px] w-full">
+      <div className="flex flex-col gap-10 items-center">
+        <ScrollReveal>
+          <p className="leading-[normal] not-italic relative shrink-0 text-sm text-[rgba(27,25,23,0.5)] text-center text-nowrap tracking-[2px] whitespace-pre" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>JOIN US</p>
+        </ScrollReveal>
+        <ScrollReveal delay={100}>
+          <Frame14 />
+        </ScrollReveal>
+        <ScrollReveal className="w-full" delay={200}>
+          <Frame15 onApplyClick={onApplyClick} onJoinTeamClick={onJoinTeamClick} />
+        </ScrollReveal>
+      </div>
     </div>
   );
 }
@@ -577,25 +891,31 @@ function Socials() {
 function Links() {
   return (
     <div className="flex flex-col gap-[32px] items-center w-full">
-      <div className="flex items-center justify-center relative shrink-0">
-        <div className="flex-none">
-          <div className="h-[53px] relative w-[38px]" data-name="IMG_4908 1">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="" className="absolute h-[150.94%] left-[-55.26%] max-w-none top-[-22.64%] w-[210.53%]" src={NexusLogo} />
+      <ScrollReveal>
+        <div className="flex items-center justify-center relative shrink-0">
+          <div className="flex-none">
+            <div className="h-[53px] relative w-[38px]" data-name="IMG_4908 1">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <img alt="" className="absolute h-[150.94%] left-[-55.26%] max-w-none top-[-22.64%] w-[210.53%]" src={NexusLogo} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex items-center justify-center min-w-full relative shrink-0">
-        <div className="flex-none">
-          <p className="leading-[normal] not-italic relative text-[#f6f6f3] text-[14px] tracking-[2px] w-full" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>CONTACT US</p>
+      </ScrollReveal>
+      <ScrollReveal className="w-full" delay={100}>
+        <div className="flex items-center justify-center min-w-full relative shrink-0">
+          <div className="flex-none">
+            <p className="leading-[normal] not-italic relative text-[#f6f6f3] text-[14px] tracking-[2px] w-full" style={{ fontFamily: 'IBM Plex Mono, monospace' }}>CONTACT US</p>
+          </div>
         </div>
-      </div>
-      <div className="flex items-center justify-center relative shrink-0 w-full">
-        <div className="flex-none">
-          <Socials />
+      </ScrollReveal>
+      <ScrollReveal className="w-full" delay={200}>
+        <div className="flex items-center justify-center relative shrink-0 w-full">
+          <div className="flex-none">
+            <Socials />
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
     </div>
   );
 }
@@ -607,43 +927,32 @@ function Footer() {
       <img
         src={imgFooter}
         alt="splash"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute left-0 top-0 h-[110%] w-full object-cover object-top"
         aria-hidden
       />
 
       {/* Links define the height, with min-height on desktop to show more of the image */}
-      <div className="relative flex items-center md:items-end justify-center px-10 sm:px-10 md:px-16 lg:px-20 py-20 md:pb-0 md:min-h-[400px] lg:min-h-[500px]">
+      <div className="section-gutter relative flex flex-col justify-end pt-20 pb-16 md:min-h-[300px] lg:min-h-[340px]">
         <Links />
       </div>
     </div>
   );
 }
 
-// Add this reusable hook
+// Pauses the ambient about-surface animation while it is off-screen
 function useScrollAnimations() {
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    const ambientObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          // Optional: Stop observing after animation triggers
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('is-visible', entry.isIntersecting);
       });
-    }, observerOptions);
+    });
 
-    // Observe all fade-up elements
-    const fadeElements = document.querySelectorAll('.fade-up');
-    fadeElements.forEach((el) => observer.observe(el));
+    document
+      .querySelectorAll('.about-surface')
+      .forEach((el) => ambientObserver.observe(el));
 
-    return () => {
-      fadeElements.forEach((el) => observer.unobserve(el));
-    };
+    return () => ambientObserver.disconnect();
   }, []);
 }
 
